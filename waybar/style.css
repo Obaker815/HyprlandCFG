@@ -1,0 +1,65 @@
+/* apply a color tint */
+/* General appearance */
+* {
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+  font-size: 12px;
+  border-radius: 20px; }
+
+/* Tab appearance */
+window#waybar {
+  background-color: rgba(75, 44, 44, 0.91); }
+
+tooltip {
+  background-color: rgba(75, 44, 44, 0.91);
+  color: #000;
+  border-radius: 10px; }
+
+#workspaces * {
+  color: #000; }
+
+#custom-wayves_left,
+#custom-wayves_right,
+#custom-wayves_cat,
+#workspaces,
+#clock,
+#pulseaudio,
+#battery,
+#bluetooth,
+#network {
+  color: #000;
+  background: rgba(255, 67, 67, 0.88);
+  margin: 2px;
+  padding: 2px 10px; }
+
+/* left ends */
+#battery,
+#custom-wayves_left,
+#custom-wayves_cat {
+  border-radius: 20px 3px 3px 20px;
+  margin-right: 1px; }
+
+/* middle pieces */
+#pulseaudio,
+#clock,
+#bluetooth {
+  border-radius: 3px;
+  margin-right: 1px;
+  margin-left: 1px; }
+
+/* left ends */
+#custom-wayves_right,
+#workspaces,
+#network {
+  border-radius: 3px 20px 20px 3px;
+  margin-left: 1px; }
+
+/* clickable elements animations */
+#pulseaudio,
+#bluetooth,
+#network {
+  transition: background-color 0.25s; }
+
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover {
+  background-color: #fff2f2; }

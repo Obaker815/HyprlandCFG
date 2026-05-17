@@ -1,0 +1,85 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["custom/wayves_cat", "hyprland/workspaces"],
+    "modules-center": ["custom/wayves_left", "clock", "custom/wayves_right"],
+    "modules-right": ["battery", "pulseaudio", "bluetooth", "network"],
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{calendar}",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "battery": {
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h{M}m",
+        "format-discharging": "{icon} {capacity}% - {time}",
+        "format-charging": " {icon} {capacity}% - {time}",
+        "format-full": " {icon} Charged",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        }
+    },
+
+    "pulseaudio": {
+        "format": "  {volume}%",
+        "format-muted": "󰝟 {volume}%",
+        "scroll-step": 5,
+        "on-click": "alacritty -e pulsemixer"
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "󰂲 off",
+        "format-connected": " {device_alias}",
+        "tooltip-format": "{controller_alias}\n{controller_address}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "on-click": "alacritty -e bluetui"
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "tooltip-format": "{ifname}\nESSID: {essid}\nIP: {ipaddr}\nGW: {gwaddr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+
+    "network": {
+      "format-wifi": "  {signalStrength}%",
+      "format-disconnected": "󰤭  0%",
+      "tooltip-format": "{ifname}\nESSID: {essid}\nIP: {ipaddr}\nGW: {gwaddr}",
+      "on-click": "alacritty -e 'nmtui'"
+    },
+
+    "custom/wayves_left": {
+        "format": "{}",
+        "exec": "python ~/.config/wayves/wayves.py -o cava=left -i cava=left -a cava=left"
+    },
+    "custom/wayves_right": {
+        "format": "{}",
+        "exec": "python ~/.config/wayves/wayves.py -o cava=right -i cava=right -a cava=right"
+    },
+    "custom/wayves_cat": {
+        "format": "{}",
+        "exec": "python ~/.config/wayves/wayves.py  -o cat -i cat -a cat",
+        "escape": true
+    }
+}
+
